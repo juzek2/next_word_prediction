@@ -4,9 +4,9 @@ import string
 
 from transformers import RobertaTokenizerFast, RobertaForMaskedLM
 bartolomej_tokenizer = RobertaTokenizerFast.from_pretrained('bartolomej')
-bartolomej_tokenizer.save_model('bartolomej')
+bartolomej_tokenizer.save_model('./bartolomej')
 bartolomej_model = RobertaForMaskedLM.from_pretrained('bartolomej').eval()
-bartolomej_model.save_pretrained('bartolomej')
+bartolomej_model.save_pretrained('./bartolomej')
 
 from transformers import RobertaTokenizer, RobertaModel
 slovakbert_tokenizer = RobertaTokenizer.from_pretrained('gerulata/slovakbert')
