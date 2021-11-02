@@ -53,7 +53,7 @@ def get_all_predictions(text_sentence, top_clean=5):
     # ========================= SLOVAKBERT =================================
     input_ids, mask_idx = encode(slovakbert_tokenizer, text_sentence, add_special_tokens=True)
     with torch.no_grad():
-        predict = roberta_model(input_ids)[0]
+        predict = slovakbert_model(input_ids)[0]
     slovakbert = decode(slovakbert_tokenizer, predict[0, mask_idx, :].topk(top_k).indices.tolist(), top_clean)
 
     # ========================= XLM ROBERTA BASE =================================
